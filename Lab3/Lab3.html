@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab3</title>
+    <style>
+        #main{
+            border-radius: 15px;
+            margin: 5px;
+            padding-left: 10px;
+        }
+
+        legend{
+            font-size: xx-large;
+            font-weight: bold;
+        }
+        fieldset{
+            margin-top: 30px;
+            border-color: darkslateblue;
+            width: 70%;
+            display: inline-block;
+            margin-left: 15%;
+            height: 600px;
+        }
+        #main{
+            position: relative;
+            overflow: auto;
+            height: 530px;
+        }
+        span{
+            color: red;
+        }
+
+        body{
+            background-color: rgb(187, 218, 233);
+            display: inline;
+        }
+        #pinfo{
+            float:left;
+            width:500px;
+        }
+        #name, #phone, #email, #birth, #password{
+            padding: 10px;
+        }
+        #submit, #reset{
+            float: right;
+            margin: 10px;
+        }
+        #main{
+            background-color: lightgreen;
+        }
+    </style>
+
+    <script>
+        function validateForm(){
+            
+            var from = document.Lab3.from;
+            if(from.value == ''){
+                alert("출발지를 선택하세요!");
+                from.focus();
+                return false;
+            }
+            var destination = document.Lab3.destination;
+            if(from.value == ''){
+                alert("도착지를 선택하세요!");
+                destination.focus();
+                return false;
+            }
+        }
+        function keypressed(obj){
+            if(obj.value.length < 3 ){
+            obj.style.backgroundColor ="tomato";
+            }
+            else
+            obj.style.backgroundColor ="yellowgreen";
+        }
+
+        function showPassword() {
+            var x = document.getElementById("pw");
+            if(x.type ==="password"){
+                x.type = "text";
+            }
+            else {
+                x.type = "password";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>승차권 예매</legend>
+    
+        <div id="main">
+            <form name="Lab3" action="lab3.php" method="GET" onsubmit='return validateForm();'>
+                <div id="pinfo">
+                    <div id="name">
+                        <label for="name"><h3><span>* </span>이름</h3></label>
+                        <input type="text" name="username" placeholder="이름을 입력하세요." onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='white'" required><br>
+                    </div>
+                    <div id="phone">
+                        <label for="phone"><h3><span>* </span>연락처</h3> </label>
+                        <select name="fnumber" onclick="this.style.backgroundColor='yellow'">
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                            <option value="016">016</option>
+                            <option value="019">019</option>
+                        </select>
+                        <input type="tel" name="snumber" placeholder="1234" size=4 pattern="[0-9]{4}" required onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='white'" required>
+                        <input type="tel" name="tnumber" placeholder="5678" size=4 pattern="[0-9]{4}" required onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='white'" required><br>
+                    </div>
+                    <div id="email">
+                        <label for="email"><h3>E-mail</h3> </label>
+                        <input type="email" name="email" placeholder="ex) im@home.com" onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='white'"><br>
+                    </div>
+                    <div id="birth">
+                        <h3><span>* </span>생년월일</h3> <input type="date" min="1900-01-01" max="2020-12-31" id="date" name="date" value="date" required>
+                    </div>
+                    <div id="password">
+                        <label for="password"><h3><span>* </span>암호설정</h3></label>
+                        <input type="password" id="pw" name="pwd" placeholder="4자 이상 입력" minlength="4" required onmouseover="this.style.backgroundColor='yellow'" onmouseout="this.style.backgroundColor='white'" onkeydown="keypressed(this)"><br>
+                        <input type="checkbox" onclick="showPassword()">Show Password<br>
+                    </div>
+                </div>
+                <div id="tinfo">
+                    <h3><span>* </span>출발</h3>
+                    <select name="from" onclick="this.style.backgroundColor='#87CEFA'">
+                        <option value=""></option>
+                        <option value="포항">포항</option>
+                        <option value="원주">원주</option>
+                        <option value="서울">서울</option>
+                        <option value="부산">부산</option>
+                        <option value="인천">인천</option>
+                        <option value="대전">대전</option>
+                        <option value="광주">광주</option>
+                        <option value="울산">울산</option>
+                        <option value="대구">대구</option>
+                    </select><br>
+                    <h3><span>* </span>도착</h3> 
+                    <select name="destination" onclick="this.style.backgroundColor='#87CEFA'">
+                        <option value=""></option>
+                        <option value="원주">원주</option>
+                        <option value="포항">포항</option>
+                        <option value="서울">서울</option>
+                        <option value="부산">부산</option>
+                        <option value="인천">인천</option>
+                        <option value="대전">대전</option>
+                        <option value="광주">광주</option>
+                        <option value="울산">울산</option>
+                        <option value="대구">대구</option>
+                    </select><br>
+                    <h3><span>* </span>출발시간</h3> 
+                    <select name="hour" onclick="this.style.backgroundColor='#FFDAB9'">
+                        <option value="09">09시</option>
+                        <option value="10">10시</option>
+                        <option value="11">11시</option>
+                        <option value="12">12시</option>
+                        <option value="13">13시</option>
+                        <option value="14">14시</option>
+                        <option value="15">15시</option>
+                        <option value="16">16시</option>
+                        <option value="17">17시</option>
+                        <option value="18">18시</option>
+                        <option value="19">19시</option>
+                        <option value="20">20시</option>
+                        <option value="21">21시</option>
+                        <option value="22">22시</option>
+                        <option value="23">23시</option>
+                    </select>
+                    <select name="minute" onclick="this.style.backgroundColor='#FFDAB9'">
+                        <option value="00">00분</option>
+                        <option value="10">10분</option>
+                        <option value="20">20분</option>
+                        <option value="30">30분</option>
+                        <option value="40">40분</option>
+                        <option value="50">50분</option>
+                    </select>
+                    <h3>이동수단</h3> 
+                    <input type="radio" id="transportation" name="transportation" value="KTX" checked>KTX 
+                    <input type="radio" id="transportation" name="transportation" value="무궁화호">무궁화호 
+                    <input type="radio" id="transportation" name="transportation" value="새마을호">새마을호 
+                </div>
+                <div id='submit'>
+                    <input type="submit" name="전송">
+                </div>
+                <div id="reset">
+                    <input type="reset" name="취소">
+                </div>
+                
+            </form>
+        </div>
+    </fieldset>
+</body>
+</html>

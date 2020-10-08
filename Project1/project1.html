@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .dropdown-button {
+      color: white;
+			background-color: black;
+			padding: 8px 16px;
+			font-size: 20pt;
+			border: none;
+		}
+    .dropdown-button:hover{
+      color: chartreuse;
+    }
+		.dropdown {
+			position: relative;
+			display: inline-block;
+		}
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: black;
+			min-width: 150px;
+			padding: 5px;
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		}
+		.dropdown-content a {
+			color: greenyellow;
+			padding: 8px;
+			text-decoration: none;
+			display: block;
+		}
+		.dropdown-content a:hover { background-color: black; }
+		.dropdown:hover .dropdown-content { display: block; }
+		.dropdown:hover .dropdown-button { background-color: black; }
+
+    .navbar {
+      background-color:rgb(0, 0, 0);
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    .navbar li a{ 
+        color: orange;
+        background-color:black !important;
+        font-size: 20px !important;
+    }
+
+    .navbar .navbar-brand {
+      color: white;
+      font-weight: bold;
+      font-size: large;
+    }
+    .navbar-nav li a:hover {
+        color: rgb(41, 231, 238) !important;
+    }
+    footer {
+      background-color: #a09e9e;
+      padding: 25px;
+      font-size: small;
+    }
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        padding: 8px 16px;
+        font-size: 20pt;
+    }
+
+    .row {
+        list-style-type: none;
+    }
+
+    .row p{
+        font-weight: bold;
+        font-size: 20pt;
+    }
+
+    #info{
+        text-align: center;
+        font-weight: bold;
+        font-size: 20pt;
+        background-color: burlywood;
+        padding: 5px;
+        color: black;
+        margin-bottom:100px;
+    }
+
+    #Canon h1, #Nikon h1, #Sony h1{
+      font-weight: bold;
+      background-color: bisque;
+      width: fit-content;
+      padding: 10px;
+      color: black;
+      border-radius: 7px;
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">DigitalT</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        
+        <li class="dropdown">
+          <button class="dropdown-button">Canon</button>
+            <div class="dropdown-content" style="z-index: 2;">
+              <a href="#Canon">200D</a>
+              <a href="#Canon">800D</a>
+              <a href="#Canon">6D Mark II</a>
+              <a href="#Canon">5D Mark IV</a>
+              <a href="#Canon">1DX Mark III</a>
+            </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-button"">Nikon</button>
+            <div class="dropdown-content" style="z-index: 2;">
+              <a href="#Nikon">D3400</a>
+              <a href="#Nikon">D5600</a>
+              <a href="#Nikon">D850</a>
+              <a href="#Nikon">D750</a>
+              <a href="#Nikon">D5</a>
+            </div>
+        </li>
+        <li class="dropdown">
+          <button class="dropdown-button">Sony</button>
+            <div class="dropdown-content" style="z-index: 2;">
+              <a href="#Sony">a5000</a>
+              <a href="#Sony">a6400</a>
+              <a href="#Sony">A7 Mark III</a>
+              <a href="#Sony">A7R III</a>
+              <a href="#Sony">A9</a>
+            </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ul>
+
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <img src="images/canon.jpg" width="1500" height="1000" alt="canon">
+      <div class="carousel-caption">
+        <h2>DSLR은 캐논</h2>
+        <p>다양한 렌즈를 보유한 DSLR의 대표명사 Canon, 캐논변주곡 아님.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/nikon.jpg" width="1500" height="1000" alt="nikon">
+      <div class="carousel-caption">
+        <h2>사진찍는 Nikon</h2>
+        <p>저는 사진을 찍고싶어요. 그렇다면 Nikon 입니다.</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="images/sony.jpg" width="1500" height="1000" alt="sony">
+      <div class="carousel-caption">
+        <h2>미러리스 Sony</h2>
+        <p>미러리스를 사시거나 손흥민을 좋아한다면 역시나 Sony.</p>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+</div>
+</div>
+<div id="info">
+    <p>For more information, Click the products.</p>
+</div>
+<div id = "Canon" class="container-fluid bg-3 text-center">    
+  <h1>[Canon]</h1><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <li><a href="https://www.canon-ci.co.kr/product/DSLR/Low/EOS_200D/content/NPAB798936" target="_blank">
+        <img src="images/canon/200d.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </li>
+      <p>200D</p>
+    </div>
+    <div class="col-sm-3"> 
+      <li><a href="https://www.canon-ci.co.kr/product/EOS_800D/DSLR/Low/content/NPAB798806" target="_blank">
+        <img src="images/canon/800d.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+    </li>
+      <p>800D</p>
+    </div>
+    <div class="col-sm-3"> 
+      <li><a href="https://www.canon-ci.co.kr/product/DSLR/Medium/EOS_6D_Mark_II/content/CFE454CA0E9B50630E0356BC5836C812" target="_blank">
+          <img src="images/canon/6dm2.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+        </li>
+      <p>6D Mark II</p>
+    </div>
+    <div class="col-sm-3">
+      <li><a href="https://www.canon-ci.co.kr/product/DSLR/Medium/EOS5DMarkIV/content/C4EBB347FF5F8DCECF5D028FA829ACE0" target="_blank">
+        <img src="images/canon/5dm4.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+      </li>
+      <p>5D Mark IV</p>
+    </div>
+    <div class="col-sm-3">
+      <li><a href="https://www.canon-ci.co.kr/product/DSLR/High/EOS-1DXMark%20III/content/DFFA06E33F7FCE15355F9AD7773B9AFD" target="_blank">
+        <img src="images/canon/1dxm3.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+      </li>
+      <p>1DX Mark III</p>
+    </div>
+  </div>
+</div><br>
+<div id = "Nikon" class="container-fluid bg-3 text-center">    
+  <h1>[Nikon]</h1><br>
+  <div class="row">
+    <div class="col-sm-3">
+      <li><a href="https://www.nikon-image.co.kr/product/dslr/d3400" target="_blank">
+        <img src="images/nikon/d3400.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+      </li>
+      <p>D3400</p>
+    </div>
+    <div class="col-sm-3"> 
+      <li><a href="https://www.nikon-image.co.kr/product/dslr/d5600" target="_blank">
+        <img src="images/nikon/d5600.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+      </li>
+      <p>D5600</p>
+    </div>
+    <div class="col-sm-3"> 
+      <li><a href="https://www.nikon-image.co.kr/product/dslr/d850" target="_blank">
+        <img src="images/nikon/d850.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+      </li>
+      <p>D850</p>
+    </div>
+    <div class="col-sm-3">
+      <li><a href="https://www.nikon-image.co.kr/product/dslr/d750" target="_blank">
+        <img src="images/nikon/d750.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+      </li>
+      <p>D750</p>
+    </div>
+    <div class="col-sm-3">
+      <li><a href="https://www.nikon-image.co.kr/product/dslr/d5" target="_blank">
+          <img src="images/nikon/d5.jpg" class="img-responsive" style="width:100%"" alt="Image"></a>
+      </li>
+      <p>D5</p>
+    </div>
+  </div>
+</div><br>
+<div id = "Sony" class="container-fluid bg-3 text-center">    
+  <h1>[Sony]</h1><br>
+  <div class='row'>
+    <div class="col-sm-3">
+        <li><a href="https://www.sony.co.kr/electronics/interchangeable-lens-cameras/ilce-5000-kit" target="_blank">
+            <img src="images/sony/a5000.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+        </li>
+        <p>a5000</p>
+    </div>
+    <div class="col-sm-3"> 
+        <li><a href="https://www.sony.co.kr/electronics/interchangeable-lens-cameras/ilce-6400" target="_blank">
+            <img src="images/sony/a6400.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+        </li>
+        <p>a6400</p>
+    </div>
+    <div class="col-sm-3"> 
+        <li><a href="https://www.sony.co.kr/electronics/interchangeable-lens-cameras/ilce-7m3-body-kit" target="_blank">
+            <img src="images/sony/a7m3.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+        </li>
+        <p>A7 Mark III</p>
+    </div>
+    <div class="col-sm-3"> 
+        <li><a href="https://www.sony.co.kr/electronics/interchangeable-lens-cameras/ilce-7rm3" target="_blank">
+            <img src="images/sony/a7r4.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+        </li>
+        <p>A7R III</p>
+    </div>
+    <div class="col-sm-3"> 
+        <li><a href="https://www.sony.co.kr/electronics/interchangeable-lens-cameras/ilce-9m2" target="_blank">
+            <img src="images/sony/a9.jpg" class="img-responsive" style="width:100%" alt="Image"></a>
+        </li>
+        <p>A9 Mark II</p>
+    </div>
+  </div>
+</div>
+</div><br>
+
+<footer class="container-fluid text-center">
+    <This>This web page is for a class assignment.<br>
+        Assignment's due date is on Sunday.</p>
+</footer>
+
+</body>
+</html>
